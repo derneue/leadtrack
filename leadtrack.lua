@@ -1,0 +1,16 @@
+-- gtd stands for getting things done
+--
+-- it is like a daybook where you can move freely in the history. It is targeted for projects
+-- where you need to track your daily work.--
+-- Features:
+--  * At start an empty day will be shown or the entries of the current day
+--  * Command l lists all entries of the current day
+--  * A range with l is also possible, e.g "l 2017-02-20 2017-02-28"
+--  * Command n creates a new entry. Topic and tag can be set. After enter the 
+--    informations an editor will be launched for a long description of the
+--    task
+--  * Command r can generate a report (start date, end date given) and lanches
+--    the editor with that information--  * ...
+--
+-- All data is saved into an sqlite3 backend. Editor is configurable.
+--
