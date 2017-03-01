@@ -21,7 +21,7 @@ function M:addCb(name, cb) 
 	table.insert(M.cbt, newentry)
 end
 
-function M:getJT() 
+function M:getCb() 
 	-- Iterate over all command entries 
 	for i,v in ipairs(M.cbt) do  
 		print("Command: "..v["txt"]) 
