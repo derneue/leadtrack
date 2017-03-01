@@ -14,3 +14,5 @@
 --
 -- All data is saved into an sqlite3 backend. Editor is configurable.
 --
+--
+--
