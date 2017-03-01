@@ -16,3 +16,53 @@
 --
 --
 --
+
+-- callback handling
+cbm = require('luacbm')
+
+helptext = [[
+  leadtrack commands
+  ------------------
+  ?			This helptext
+  l			List journal of the day
+  n			Add new entry of the day
+  d			Delete entry
+]]
+
+function print_helptext(param)
+	print(helptext)
+end
+
+function cmd_list_journal(param)
+	print("Print journal")
+end
+
+function cmd_add_new_journal_entry(param)
+	print("New journal entry added")
+end
+
+function cmd_delete_journal_entry(param)
+	print("Journal entry deleted")
+end
+
+-- Fill callback table
+ctable = {
+	{ txt="?", cmd=print_helptext },
+	{ txt="l", cmd=cmd_list_journal },
+	{ txt="n", cmd=cmd_add_new_journal_entry },
+	{ txt="d", cmd=cmd_delete_journal_entry },
+}
+
+ltstate = "DO_RUN"
+
+-- Add handlers
+cbm:setCbTable(ctable)
+
+
+-- Command shell
+while ltstate ~= "DO_EXIT" do
+	io.write("> ")
+	local cmd = io.read()
+	cbm:parse(cmd)	
+end
+
